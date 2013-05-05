@@ -4,7 +4,7 @@
 
 """Test the guess num game classes."""
 
-__author__ = 'Ken Guyton (monolith149.com)'
+__author__ = 'Ken Guyton'
 
 import unittest
 import guess_num2
@@ -44,24 +44,24 @@ class TestGame(unittest.TestCase):
     self.assertEqual(self.game.direction(NUM_TO_GUESS), 0)
 
   def test_evaluate_guess_low(self):
-    self.assertEqual(self.game.evaluate(LOW_GUESS),
+    self.assertEqual(self.game.evaluate(LOW_GUESS, -1),
                      '{0} is low.'.format(LOW_GUESS))
     self.assertFalse(self.game.won)
 
   def test_evaluate_guess_high(self):
-    self.assertEqual(self.game.evaluate(HIGH_GUESS),
+    self.assertEqual(self.game.evaluate(HIGH_GUESS, 1),
                      '{0} is high.'.format(HIGH_GUESS))
     self.assertFalse(self.game.won)
 
   def test_evaluate_correct_high(self):
-    self.assertEqual(self.game.evaluate(NUM_TO_GUESS),
+    self.assertEqual(self.game.evaluate(NUM_TO_GUESS, 0),
                      '{0} is correct!  You won!'.format(NUM_TO_GUESS))
     self.assertTrue(self.game.won)
 
   def test_count(self):
-    self.game.evaluate(LOW_GUESS)
-    self.game.evaluate(LOW_GUESS)
-    self.game.evaluate(LOW_GUESS)
+    self.game.evaluate(LOW_GUESS, -1)
+    self.game.evaluate(LOW_GUESS, -1)
+    self.game.evaluate(LOW_GUESS, -1)
     self.assertEqual(self.game.count, 3)
 
 
