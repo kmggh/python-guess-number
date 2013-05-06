@@ -11,7 +11,6 @@ __author__ = 'Ken Guyton'
 
 import player
 import guess_num2
-import random
 import argparse
 
 MAX_DEFAULT = 100
@@ -21,6 +20,8 @@ MAP = {-1: 'low', 1: 'high'}
 
 
 def parse_args():
+  """Parse the command line args for main."""
+  
   parser = argparse.ArgumentParser()
   parser.add_argument('-m', '--max', help='Max guess amount', type=int,
                       default=100)
@@ -37,11 +38,11 @@ def main():
   game = guess_num2.Game(max_val=args.max)
 
   if args.binary:
-    the_player = player.Player(game)
+    the_player = player.BinaryPlayer(game)
   elif args.random:
     the_player = player.RandomPlayer(game)
   else:
-    the_player = player.Player(game)
+    the_player = player.BinaryPlayer(game)
 
   print 'Guessing from {0} to {1}: '.format(game.min, game.max)
 

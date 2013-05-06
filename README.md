@@ -44,6 +44,14 @@ range, based on the response from the game.
 The second random player is a subclass of the other, since they were
 added one at a time.
 
+Release 1.2
+-----------
+
+*2013-05-05*
+
+The Player class was made abstract with sub classes for RandomPlayer
+and BinaryPlayer.
+
 
 Author
 ======

@@ -24,6 +24,14 @@ EXPECTED_SEQUENCE = (
   (43, 1),
   (42, 0))
 
+RANDOM_SEQUENCE = (
+  (15, 1),
+  (14, 1),
+  (7, 1),
+  (6, 1),
+  (4, 0)
+  )
+
 
 class FakeRandom(object):
   """Fake the random module."""
@@ -37,7 +45,7 @@ class FakeRandom(object):
 class TestBinaryPlayer(unittest.TestCase):
   def setUp(self):
     self.game = guess_num2.Game(random_mod=FakeRandom())
-    self.player = player.Player(self.game)
+    self.player = player.BinaryPlayer(self.game)
 
   def test_create(self):
     self.assertNotEqual(self.player, None)
@@ -92,6 +100,9 @@ class TestRandomPlayer(unittest.TestCase):
     self.assertEqual(self.player.guess(0, 2), 42)
     self.assertEqual(self.player.guess(0, 3), 42)
 
+  def test_sequence(self):
+    play_list = list(self.player.play())
+    self.assertEqual(play_list, [(42, 0)])
 
 if __name__ == '__main__':
   unittest.main()
