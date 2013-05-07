@@ -78,6 +78,17 @@ class Game(object):
     else:
       return '{0} is {1}.'.format(guess, MAP[direction])
 
+  def clone(self):
+    """Create a copy of this game with the same limits and number to guess."""
+
+    clone_game = Game()
+    clone_game.num_to_guess = self.num_to_guess
+    clone_game.random = self.random
+    clone_game.min = self.min
+    clone_game.max = self.max
+
+    return clone_game
+
 
 def parse_args():
   """Parse arguments for the program."""

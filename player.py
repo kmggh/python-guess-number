@@ -1,3 +1,6 @@
+# Fri 2013-05-03 23:49:55 -0400
+# Copyright (c) 2013 by Ken Guyton.  All Rights Reserved.
+
 """Computer players to play using various guessing strategies."""
 
 import random
@@ -45,6 +48,7 @@ class Player(object):
     current_max = self.game.max
 
     guess = self.guess(current_min, current_max)
+
     result = self.game.direction(guess)
     while result != 0:
       yield guess, result
@@ -55,6 +59,7 @@ class Player(object):
         current_max = guess
 
       guess = self.guess(current_min, current_max)
+
       result = self.game.direction(guess)
 
     yield guess, result
@@ -76,7 +81,7 @@ class BinaryPlayer(Player):
 
     val_range = max_val - min_val
 
-    return int(val_range / 2.0 + min_val + 0.5)
+    return int(val_range / 2 + min_val + 0.5)
 
   def guess(self, current_min, current_max):
     """Generate a guess by splitting the range.

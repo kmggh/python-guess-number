@@ -64,6 +64,16 @@ class TestGame(unittest.TestCase):
     self.game.evaluate(LOW_GUESS, -1)
     self.assertEqual(self.game.count, 3)
 
+  def test_clone(self):
+    new_game = self.game.clone()
+    self.game.evaluate(LOW_GUESS, -1)
+    self.game.evaluate(LOW_GUESS, -1)
+    self.assertEqual(self.game.count, 2)
+    self.assertEqual(new_game.count, 0)
+    self.assertEqual(self.game.num_to_guess, new_game.num_to_guess)
+    self.assertEqual(self.game.min, new_game.min)
+    self.assertEqual(self.game.max, new_game.max)
+
 
 if __name__ == '__main__':
   unittest.main()

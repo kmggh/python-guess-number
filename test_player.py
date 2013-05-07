@@ -18,10 +18,10 @@ LOW_GUESS = 21
 EXPECTED_SEQUENCE = (
   (50, 1),
   (25, -1),
-  (38, -1),
-  (44, 1),
-  (41, -1),
+  (37, -1),
   (43, 1),
+  (40, -1),
+  (41, -1),
   (42, 0))
 
 RANDOM_SEQUENCE = (
@@ -58,25 +58,25 @@ class TestBinaryPlayer(unittest.TestCase):
 
   def test_split_range(self):
     self.assertEqual(self.player.split_range(0, 100), 50)
-    self.assertEqual(self.player.split_range(25, 50), 38)
+    self.assertEqual(self.player.split_range(25, 50), 37)
     self.assertEqual(self.player.split_range(38, 50), 44)
     self.assertEqual(self.player.split_range(38, 44), 41)
-    self.assertEqual(self.player.split_range(41, 44), 43)
+    self.assertEqual(self.player.split_range(41, 44), 42)
     self.assertEqual(self.player.split_range(41, 43), 42)
-    self.assertEqual(self.player.split_range(0, 1), 1)
+    self.assertEqual(self.player.split_range(0, 1), 0)
     self.assertEqual(self.player.split_range(0, 2), 1)
-    self.assertEqual(self.player.split_range(0, 3), 2)
+    self.assertEqual(self.player.split_range(0, 3), 1)
 
   def test_guess(self):
     self.assertEqual(self.player.guess(0, 100), 50)
-    self.assertEqual(self.player.guess(25, 50), 38)
+    self.assertEqual(self.player.guess(25, 50), 37)
     self.assertEqual(self.player.guess(38, 50), 44)
     self.assertEqual(self.player.guess(38, 44), 41)
-    self.assertEqual(self.player.guess(41, 44), 43)
+    self.assertEqual(self.player.guess(41, 44), 42)
     self.assertEqual(self.player.guess(41, 43), 42)
-    self.assertEqual(self.player.guess(0, 1), 1)
+    self.assertEqual(self.player.guess(0, 1), 0)
     self.assertEqual(self.player.guess(0, 2), 1)
-    self.assertEqual(self.player.guess(0, 3), 2)
+    self.assertEqual(self.player.guess(0, 3), 1)
 
 
 class TestRandomPlayer(unittest.TestCase):

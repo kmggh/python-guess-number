@@ -21,7 +21,7 @@ MAP = {-1: 'low', 1: 'high'}
 
 def parse_args():
   """Parse the command line args for main."""
-  
+
   parser = argparse.ArgumentParser()
   parser.add_argument('-m', '--max', help='Max guess amount', type=int,
                       default=100)
