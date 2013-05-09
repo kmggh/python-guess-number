@@ -7,8 +7,8 @@
 __author__ = 'Ken Guyton'
 
 import guess_num2
-import unittest
 import tournament
+import unittest
 
 FAKE_RESULT = [(50, 1), (25, 1), (12, 0)]
 

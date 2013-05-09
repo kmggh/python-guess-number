@@ -10,8 +10,8 @@ guesses.  The game says whether it's high or low.
 
 __author__ = 'Ken Guyton'
 
-import random
 import argparse
+import random
 
 MAX_DEFAULT = 100
 MIN_DEFAULT = 0

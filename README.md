@@ -106,11 +106,21 @@ BinaryPlayer would always choose, on the range (0, 1) a value of 1.
 The only correct answer in that case is 0.  The ranges are always
 exclusive on the maximum side.
 
+Release 1.3.1
+-------------
+
+*2013-05-08*
+
+This release fixes several style items.  The import lists are now
+sorted.  The code should follow PEP8 and PEP257 except for the tests
+that don't have doc strings and the default unittest names, e.g.,
+setUp, are not compliant.
+
 
 Bugs
 ====
 
-This version is still limited to a fixes number of player objects
+This version is still limited to a fixed number of player objects
 (two).  A more generalized version for an arbitrary number of players
 would be nice.
 

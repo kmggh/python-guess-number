@@ -10,9 +10,9 @@ This version pits the binary player vs. the random player.
 __author__ = 'Ken Guyton'
 
 import argparse
-import sys
 import guess_num2
 import player
+import sys
 import tournament
 
 

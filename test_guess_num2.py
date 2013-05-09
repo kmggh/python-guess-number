@@ -6,8 +6,8 @@
 
 __author__ = 'Ken Guyton'
 
-import unittest
 import guess_num2
+import unittest
 
 NUM_TO_GUESS = 42
 HIGH_GUESS = 50

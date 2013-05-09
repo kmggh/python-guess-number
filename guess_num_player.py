@@ -9,9 +9,9 @@ A computer player plays the game.
 
 __author__ = 'Ken Guyton'
 
-import player
-import guess_num2
 import argparse
+import guess_num2
+import player
 
 MAX_DEFAULT = 100
 MIN_DEFAULT = 0
